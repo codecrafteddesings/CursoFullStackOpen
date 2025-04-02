@@ -1,19 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
-
-  const increaseByOne = () => setCounter(counter + 1);
-  const setToZero = () => setCounter(0);
+  // guarda los clics de cada botón en su propio estado
+  //const [good, setGood] = useState(0)
+  //const [neutral, setNeutral] = useState(0)
+  //const [bad, setBad] = useState(0)
 
   return (
     <div>
-      <div>{counter}</div>
-
-      <button onClick={increaseByOne}>plus</button>
-
-      <button onClick={setToZero}>zero</button>
+      code here
     </div>
-  );
-};
+  )
+}
+
+
 export default App;
