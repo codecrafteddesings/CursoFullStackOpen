@@ -5,32 +5,35 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  console.log(good, neutral, bad);
-  // guarda el total de clics en una sola variable
-  const total = good + neutral + bad;
-  // guarda el porcentaje de buenos clics en una sola variable
-  const positive = (good / total) * 100;
-  // guarda el porcentaje de malos clics en una sola variable
-  const negative = (bad / total) * 100;
-  // guarda el porcentaje de neutros clics en una sola variable
-  const neutralPercentage = (neutral / total) * 100;
+
+  const handleGoodClick = () => {
+    setGood(good + 1);
+    console.log("Me gusta!");
+  };
+  const handleNeutralClick = () => {
+    setNeutral(neutral + 1);
+    console.log("Ni fu ni fa ...");
+  };
+  const handleBadClick = () => {
+    setBad(bad + 1);
+    console.log("No me gusta");
+  };
+  // calcula el total de clics
 
   return (
     <>
       <div>
         <h1>Give feedback</h1>
-        {good} <button onClick={() => setGood(good + 1)}>Good</button> {neutral}{" "}
-        <button onClick={() => setNeutral(neutral + 1)}>Neutral</button> {" "}
-        <button onClick={() => setBad(bad + 1)}>Bad</button>{" "}
-        {bad}
-        <h1>Statistics</h1>
+        <button onClick={handleGoodClick}>Good</button>{" "}
+        <button onClick={handleNeutralClick}>Neutral</button>{" "}
+        <button onClick={handleBadClick}>Bad</button>
+        <h3>Statistics</h3>
         <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
+        <p>Neutra: {neutral}</p>
         <p>Bad: {bad}</p>
-        <p>Total: {total}</p>
-        <p>Positive: {positive} %</p>
-        <p>Negative: {negative} %</p>
-        <p>Neutral: {neutralPercentage} %</p>
+        <p>All: {good + neutral + bad}</p>
+        <p>Average: {(good - bad) / (good + neutral + bad)}</p>
+        <p>Positive: {(good / (good + neutral + bad)) * 100} %</p>
       </div>
     </>
   );
