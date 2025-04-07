@@ -3,7 +3,12 @@ import { useState } from "react";
 const App = () => {
   const [selected, setSelected] = useState(0);
   // Initialize votes state with an array of 8 zeros
-  const [votes, setVotes] = useState(Array(8).fill(0));
+  const [votes, setVotes] = useState({
+    0: 0,
+    1: 3,
+    2: 4,
+    3: 2,
+  });
 
   const anecdotes = [
     "If it hurts, do it more often.",
@@ -17,7 +22,7 @@ const App = () => {
   ];
 
   const handleVote = () => {
-    const newVotes = [...votes];
+    const newVotes = {...votes};
     newVotes[selected] += 1;
     setVotes(newVotes);
     console.log("Gracias por votar!");
@@ -28,7 +33,7 @@ const App = () => {
       <div>
         {anecdotes[selected]}
         <br />
-        <p> Has {votes[selected]} votos</p>
+        <p> Has {votes[selected]} votes</p>
         <button onClick={handleVote}>Vote</button>{" "}
         <button
           onClick={() =>
