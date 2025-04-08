@@ -6,8 +6,12 @@ const App = () => {
   const [votes, setVotes] = useState({
     0: 0,
     1: 3,
-    2: 4,
+    2: 7,
     3: 2,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
   });
 
   const anecdotes = [
@@ -28,9 +32,15 @@ const App = () => {
     console.log("Gracias por votar!");
   };
 
+  // Find the anecdote with the most votes
+  const mostVotedIndex = Object.keys(votes).reduce((a, b) =>
+    votes[a] > votes[b] ? a : b
+  );
+
   return (
     <>
       <div>
+        <h1>Anecdote of the day</h1>
         {anecdotes[selected]}
         <br />
         <p> Has {votes[selected]} votes</p>
@@ -42,6 +52,9 @@ const App = () => {
         >
           Next anecdote
         </button>
+        <h2>Anedocte with most votes</h2>
+        {anecdotes[mostVotedIndex]}
+        <p>Has {votes[mostVotedIndex]} Votes</p>
       </div>
     </>
   );
