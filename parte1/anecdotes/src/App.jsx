@@ -2,12 +2,16 @@ import { useState } from "react";
 
 const App = () => {
   const [selected, setSelected] = useState(0);
-  // Initialize votes state with an array of 8 zeros
+
   const [votes, setVotes] = useState({
     0: 0,
     1: 3,
     2: 4,
     3: 2,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
   });
 
   const anecdotes = [
@@ -22,16 +26,26 @@ const App = () => {
   ];
 
   const handleVote = () => {
-    const newVotes = {...votes};
+    const newVotes = { ...votes };
     newVotes[selected] += 1;
     setVotes(newVotes);
-    console.log("Gracias por votar!");
+    console.log("Gracias por su voto!");
   };
+
+  const getMostVotedAnecdote = () => {
+    const maxVotes = Math.max(...Object.values(votes));
+    const mostVotedIndex = Object.keys(votes).find(
+      (key) => votes[key] === maxVotes
+    );
+    return { anecdote: anecdotes[mostVotedIndex], votes: maxVotes };
+  };
+
+  const mostVoted = getMostVotedAnecdote();
 
   return (
     <>
       <div>
-        {anecdotes[selected]}
+        <h1>{anecdotes[selected]}</h1>
         <br />
         <p> Has {votes[selected]} votes</p>
         <button onClick={handleVote}>Vote</button>{" "}
@@ -42,6 +56,11 @@ const App = () => {
         >
           Next anecdote
         </button>
+        
+        <h2>Anecdote with most votes</h2>
+        <p>
+          {mostVoted.anecdote} has {mostVoted.votes} votes
+        </p>
       </div>
     </>
   );
