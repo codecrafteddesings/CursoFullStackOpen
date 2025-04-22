@@ -35,12 +35,7 @@ const App = (props) => {
       </button>
       <ul>
         {notes
-          .filter((note) => {
-            if (showAll === true) {
-              return note;
-              return note.important === true;
-            }
-          })
+          .filter((note) => showAll || note.important)
           .map((note) => (
             <Note key={note.id} note={note} />
           ))}
