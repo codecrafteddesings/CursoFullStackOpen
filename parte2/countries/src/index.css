@@ -1,0 +1,29 @@
+.body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+
+
+.note {
+    color: gray;
+    padding-top: 3px;
+    font-size: 15px;
+}
+
+.encabezado {
+    color: green;
+    font-style: italic;
+}
+
+.error {
+    color: red;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
