@@ -1,34 +1,8 @@
 export const JavaScritp = () => {
+  const header = "JavaScritp is a programming language that is used to create interactive effects within web browsers. It is a high-level, dynamic, untyped, and interpreted programming language. JavaScript is a prototype-based language that supports object-oriented, imperative, and functional programming styles. It is widely used for client-side web development, but it can also be used for server-side development with the help of frameworks like Node.js.";
 
-  const course = "Course fullStack! ";
- 
-  console.log("Hello world!");
-
-  const parte1 = {
-    name: "Fundamentals of React",
-    exercises: 10,
-  }
-
-  const parte2  = {
-    name: "Using props to pass data",
-    exercises: 7,
-
-  }
-
-  const parte3 = {
-    name: "State of a component",
-    exercises: 14,
-  }
-
-  return (
-    <div>
-      <h1>{course}</h1>
-      <p>{parte1.name} {parte1.exercises}</p>
-      <p>{parte2.name} {parte2.exercises}</p>
-      <p>{parte3.name} {parte3.exercises}</p>
-    </div>
+  return(
+    <p>{header}</p>
+    
   )
 };
-
-  
-  

@@ -1,3 +1,5 @@
+import { JavaScritp } from "./components/JavaScritp";
+
 const App = () => {
   
   const course = {
@@ -39,6 +41,7 @@ const App = () => {
           course.parts[1].exercises +
           course.parts[2].exercises}
       </p>
+      <JavaScritp />
     </div>
   );
 };
