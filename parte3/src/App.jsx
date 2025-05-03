@@ -1,7 +1,8 @@
 import { JavaScritp } from "./components/JavaScritp";
+import { Algo } from "./components/Algo";
+import { Hello } from "./components/Hello";
 
 const App = () => {
-  
   const course = {
     name: "Course Information",
     parts: [
@@ -19,6 +20,9 @@ const App = () => {
       },
     ],
   };
+
+  const nombre = "Maria";
+  const age = 7;
 
   console.log(course.parts);
 
@@ -41,7 +45,24 @@ const App = () => {
           course.parts[1].exercises +
           course.parts[2].exercises}
       </p>
-      <JavaScritp />
+      <JavaScritp color="red" info="Hola soy un Props" />
+      <JavaScritp
+        color="green"
+        info="La mejor forma de ir rapido es hacer las cosas bien y despacio"
+      />
+      <JavaScritp
+        color="gray"
+        info="Por eso cuando no entiendo algo vuelvo atras para intentarlo nuevamente para entenderlo"
+      />
+      <JavaScritp
+        color="blue"
+        info="En javaScritp se llaman parametros. Pero en react se llaman parametros"
+      />
+      <Algo color="orange" masage="React es la mejor libreria de JavaScritp" />
+
+      <Hello nombre={'Joel'} age={5+3}/>
+      <Hello nombre={nombre} age={age} />
+      
     </div>
   );
 };
