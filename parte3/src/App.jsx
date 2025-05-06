@@ -1,5 +1,15 @@
 import { useState } from "react";
+import { Contador } from "./components/Contador";
+import { Lista } from "./components/Lista";
 
+const Display = (props) => {
+  return (
+    <div>
+      {props.count}
+    </div>
+  )
+}
+console.log("Hola soy un console log")
 const App = () => {
 const [count, setCount] = useState(0);
 
@@ -12,12 +22,15 @@ const setZero = () => setCount(0);
 
   return (
     <div>
-      <h1>{count}</h1>
+      <Lista  />
+      <Contador />
+      <Display count={count} />
       <button onClick={increaseBy}>
         plus
-      </button>
-      <button onClick={setToZero}>Zero</button>
-      <button onClick={setZero}>Zero</button>
+      </button>{" "}
+      <button onClick={setToZero}>minus</button>{" "}
+      <button onClick={setToZero}>-</button>{" "}
+      <button onClick={setZero}>Reset</button>
     </div>
   );
 };
