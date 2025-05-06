@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Contador } from "./components/Contador";
 import { Lista } from "./components/Lista";
+import { Formulario } from "./components/Formulario";
 
 const Display = (props) => {
   return (
@@ -9,7 +10,7 @@ const Display = (props) => {
     </div>
   )
 }
-console.log("Hola soy un console log")
+
 const App = () => {
 const [count, setCount] = useState(0);
 
@@ -22,6 +23,7 @@ const setZero = () => setCount(0);
 
   return (
     <div>
+      <Formulario/>
       <Lista  />
       <Contador />
       <Display count={count} />
