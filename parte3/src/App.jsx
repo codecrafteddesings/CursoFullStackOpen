@@ -25,7 +25,7 @@ const setZero = () => setCount(0);
   return (
     <div>
       <ApiWeb />
-      <Formulario/>
+       {/*<Formulario/> 
       <Lista  />
       <Contador />
       <Display count={count} />
@@ -34,7 +34,7 @@ const setZero = () => setCount(0);
       </button>{" "}
       <button onClick={setToZero}>minus</button>{" "}
       <button onClick={setToZero}>-</button>{" "}
-      <button onClick={setZero}>Reset</button>
+      <button onClick={setZero}>Reset</button>*/}
     </div>
   );
 };

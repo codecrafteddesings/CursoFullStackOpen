@@ -1,7 +1,7 @@
 import React from "react";
 
 export const ApiWeb = () => {
-  const [equipo, setEquipo] = React.useState(null);
+  const [equipo, setEquipo] = React.useState([]);
 
   React.useEffect(() => {
     //console.log("useEffect");
@@ -22,17 +22,11 @@ export const ApiWeb = () => {
   return (
     <div>
       <h1>ApiWeb</h1>
-      {equipo ? (
-        <ul>
-          {equipo.map((user) => (
-            <li key={user.id}>
-              {user.name} - {user.email}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Cargando...</p>
-      )}
+      <ul>
+        {equipo.map((items) => (
+          <li key={items.id}>{items.name} - {items.username} - {items.email}</li>
+        ))}
+      </ul>
     </div>
   );
 };
