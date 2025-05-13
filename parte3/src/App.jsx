@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Contador } from "./components/Contador";
 import { Lista } from "./components/Lista";
 import { Formulario } from "./components/Formulario";
+import { ApiWeb } from "./components/ApiWeb";
 
 const Display = (props) => {
   return (
@@ -23,6 +24,7 @@ const setZero = () => setCount(0);
 
   return (
     <div>
+      <ApiWeb />
       <Formulario/>
       <Lista  />
       <Contador />
