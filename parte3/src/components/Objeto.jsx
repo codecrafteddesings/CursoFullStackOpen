@@ -1,8 +1,12 @@
 import React from "react";
 
 export const Objeto = () => {
-  const objeto = [
-    { name: "Juan", edad: 25, telefono: 1234567892, correo: "juan@gmail.com" },
+  const datos = [
+    { name: "Juan",
+    edad: 25,
+    telefono: 1234567892,
+    correo: "juan@gmail.com"
+   },
     {
       name: "Pedro",
       edad: 30,
@@ -19,24 +23,23 @@ export const Objeto = () => {
   return (
     <div>
       <p>
-        {objeto[0].name}
-        {objeto[0].edad}
-        {objeto[0].telefono}
-        {objeto[0].correo}
+        {datos[0].name}
+        {datos[0].edad}
+        {datos[0].telefono}
+        {datos[0].correo}
       </p>
       <br />
       <p>
-        {objeto[1].name}
-        {objeto[1].edad}
-        {objeto[1].telefono}
-        {objeto[1].correo}
+        {datos[1].name}
+        {datos[1].edad}
+        {datos[1].correo}
       </p>
       <br />
       <p>
-        {objeto[2].name}
-        {objeto[2].edad}
-        {objeto[2].telefono}
-        {objeto[2].correo}
+        {datos[2].name}
+        {datos[2].edad}
+        {datos[2].telefono}
+        {datos[2].correo}
       </p>
       <br />
     </div>
